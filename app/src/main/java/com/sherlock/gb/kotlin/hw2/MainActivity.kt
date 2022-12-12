@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             showToast(copy.name);
             showToast(copy.age.toString());
         }
+
+        val buttonWeatherList: MaterialButton = findViewById(R.id.key_weather_list)
+        buttonWeatherList.setOnClickListener {
+
+        }
     }
 
     fun showToast(toast:String){
