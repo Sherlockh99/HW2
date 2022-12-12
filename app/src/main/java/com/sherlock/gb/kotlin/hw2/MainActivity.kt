@@ -12,11 +12,22 @@ class MainActivity : AppCompatActivity() {
 
         val button: MaterialButton = findViewById(R.id.key1)
         button.setOnClickListener {
-            val text = "Пора спать!"
-            val duration = Toast.LENGTH_SHORT
-            val toast = Toast.makeText(applicationContext, text, duration)
+            showToast("Пора спать!")
+        }
 
-            toast.show()
+        val button2: MaterialButton = findViewById(R.id.key2)
+        button2.setOnClickListener {
+            val cat = FirstDataClass("Murzik", 7)
+            showToast(cat.toString());
+            showToast(cat.age.toString());
+            showToast(cat.name);
         }
     }
+
+    fun showToast(toast:String){
+        val duration = Toast.LENGTH_LONG
+        val toast = Toast.makeText(applicationContext, toast, duration)
+        toast.show()
+    }
+
 }
