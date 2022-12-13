@@ -3,11 +3,13 @@ package com.sherlock.gb.kotlin.hw2
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
-    val cat = FirstDataClass("Murzik", 7)
+    private val cat = FirstDataClass("Murzik", 7)
+    private val weatherList = ObjectClass.getWeatherList()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,19 @@ class MainActivity : AppCompatActivity() {
 
         val buttonWeatherList: MaterialButton = findViewById(R.id.key_weather_list)
         buttonWeatherList.setOnClickListener {
+            for (one in weatherList) {
+                showToast(one.nameCity + "; " + one.temperature);
+            }
+        }
 
+        val buttonWeatherWith: MaterialButton = findViewById(R.id.key_weather_with)
+        buttonWeatherWith.setOnClickListener {
+
+            with(weatherList) {
+                forEach {
+                    showToast("${it.nameCity} " + "; " + "${it.temperature}");
+                }
+            }
         }
     }
 

@@ -39,4 +39,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/key1" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/key_weather_with"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_key_weather_with"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_weather_list" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
